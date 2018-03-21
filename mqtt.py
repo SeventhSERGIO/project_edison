@@ -5,7 +5,7 @@ def on_connect(client, userdata, flags, rc):
     print("Connected to server. Connection code: "+str(rc))
 
     # Do a subscribe to "MQTTEdison" topic whenever a new connection is done 
-    client.subscribe("Distancia")
+    client.subscribe("test")
 
 # Callback - called when a new message is received / published
 def on_message(client, userdata, msg):
