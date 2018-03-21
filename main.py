@@ -14,8 +14,8 @@ def on_connect(client, userdata, flags, rc):
 # Callback - called when a new message is received / published
 def on_message(client, userdata, msg):
 	#writes on console screen the topic and the message received
-	print("Topico: "+msg.topic+" - Mensagem recebida: "+str(msg.payload)) 
-	
+	#print("Topico: "+msg.topic+" - Mensagem recebida: "+str(msg.payload)) 
+	print(str(msg.payload)) 
 	#writes on LCD Display the message received
 	lcdDisplay.setColor(0,255,255)
 	lcdDisplay.setCursor(0, 0)
