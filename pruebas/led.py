@@ -1,5 +1,5 @@
+from time import sleep
 import mraa
-   import time
    led = mraa.Gpio(13)
    led.dir(mraa.DIR_OUT)
    while True:
