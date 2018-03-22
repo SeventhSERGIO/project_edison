@@ -10,7 +10,7 @@ void do_when_interrupted(int sig)
 
 int main()
 {
-	mraa_gpio_context led;
+	mraa_gpio_context led, button;
 
 	led = mraa_gpio_init(13);
 	button = mraa_gpio_init(4);
