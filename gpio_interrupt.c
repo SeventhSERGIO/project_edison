@@ -17,7 +17,7 @@ int main()
 	mraa_gpio_dir(led, MRAA_GPIO_OUT);
 	mraa_gpio_dir(button, MRAA_GPIO_IN);
 
-	mraa_gpio_isr(button, MRAA_GPIO_EDGE_RISING, &do_when_interrupted, NULL);
+	mraa_gpio_isr(button, MRAA_GPIO_EDGE_FALLING, &do_when_interrupted, NULL);
 
 	while (run_flag)
 	{
