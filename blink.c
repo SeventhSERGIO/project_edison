@@ -11,7 +11,7 @@ void do_when_interrupted(int sig)
 
 int main()
 {
-	mraa_gpio_context led:
+	mraa_gpio_context led;
 
 	led = mraa_gpio_init(13);
 	mraa_gpio_dir(led, MRAA_GPIO_OUT);
