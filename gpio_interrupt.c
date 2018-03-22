@@ -3,7 +3,7 @@
 
 sig_atomic_t volatile run_flag = 1;
 
-void do_when_interrupted(int sig)
+void do_when_interrupted()
 {
 		run_flag = 0;
 }
