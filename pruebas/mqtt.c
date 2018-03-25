@@ -3,7 +3,7 @@
 #include "string.h"
 #include "MQTTClient.h"
 
-#define ADDRESS     "tcp: 192.168.1.117"
+#define ADDRESS     "tcp: 192.168.1.64"
 #define CLIENTID    "ExampleClientPub"
 #define TOPIC       "test"
 #define PAYLOAD     "Hello World!"
