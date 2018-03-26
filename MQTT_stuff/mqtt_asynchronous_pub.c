@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "MQTTClient.h"
+#define LEN 20
 //  Macros
 #define ADDRESS     "192.168.1.64"
 #define CLIENTID    "ExampleClientPub"
@@ -49,6 +50,8 @@ int main(int argc, char* argv[])
     // The token can then be used to check that the message was successfully delivered to its destination
     MQTTClient_deliveryToken token;
     int rc;
+    int valor;
+    char cadena[LEN];
     // This function creates an MQTT client ready for connection to the specified server and
     // using the specified persistent storage
     // &client A pointer to an MQTTClient handle
@@ -75,9 +78,9 @@ int main(int argc, char* argv[])
       printf("Failed to connect, return code %d\n", rc);
       exit(EXIT_FAILURE);
     }
-    char* valor;
-    scanf("%s\n",&valor);
-    pubmsg.payload = valor;
+    scanf("%d", &valor);
+    sprintf(cadena, "%d", valor);
+    pubmsg.payload = cadena;
     pubmsg.payloadlen = strlen(valor);
     pubmsg.qos = QOS;
     pubmsg.retained = 0;
