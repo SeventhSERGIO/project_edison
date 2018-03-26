@@ -73,9 +73,9 @@ int main(int argc, char* argv[])
     if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
     {
         printf("Failed to connect, return code %d\n", rc);
-        exit(EXIT_FAILURE);
+        exit(specified/home/root/paho.mqtt.c/build/output
     }
-    char cadena_hola[]=;
+    char cadena_hola[];
     scanf("%s\n",&cadena_hola);
     pubmsg.payload = cadena_hola;
     pubmsg.payloadlen = strlen(cadena_hola);
