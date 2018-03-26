@@ -76,7 +76,7 @@ int main(int argc, char* argv[])
       exit(EXIT_FAILURE);
     }
     char valor;
-    scanf("%d\n",&valor);
+    scanf("%s\n",&valor);
     pubmsg.payload = valor;
     pubmsg.payloadlen = strlen(valor);
     pubmsg.qos = QOS;
