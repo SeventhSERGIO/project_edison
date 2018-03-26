@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
       printf("Failed to connect, return code %d\n", rc);
       exit(EXIT_FAILURE);
     }
-    char valor;
+    char* valor;
     scanf("%s\n",&valor);
     pubmsg.payload = valor;
     pubmsg.payloadlen = strlen(valor);
