@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "MQTTClient.h"
+//  Macros
 #define ADDRESS     "192.168.1.64"
 #define CLIENTID    "ExampleClientPub"
 #define TOPIC       "test"
@@ -38,22 +39,46 @@ void connlost(void *context, char *cause)
 }
 int main(int argc, char* argv[])
 {
+    // A handle representing an MQTT client
     MQTTClient client;
+    // Defines several settings that control the way the client connects to an MQTT server
     MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
+    // A structure representing the payload and attributes of an MQTT message
     MQTTClient_message pubmsg = MQTTClient_message_initializer;
+    // A delivery token is returned to the client application when a message is published.
+    // The token can then be used to check that the message was successfully delivered to its destination
     MQTTClient_deliveryToken token;
     int rc;
+    // This function creates an MQTT client ready for connection to the specified server and
+    // using the specified persistent storage
+    // &client A pointer to an MQTTClient handle
+    // ADDRESS string specifying the server to which the client will connect
+    // CLIENTID The client identifier passed to the server when the client connects to it
+    // MQTTCLIENT_PERSISTENCE_NONE The type of persistence to be used by the client
+    // NULL persistence_context, this argument is unused and should be set to NULL
     MQTTClient_create(&client, ADDRESS, CLIENTID, MQTTCLIENT_PERSISTENCE_NONE, NULL);
+    // The keep alive interval enables the client to detect when the server is no longer available
     conn_opts.keepAliveInterval = 20;
+    // If a previous session still exists, and cleansession=true,
+    // then the previous session information at the client and server is cleared
     conn_opts.cleansession = 1;
+    // This function sets the callback functions for a specific client
+    // client A valid client handle
+    // NULL A pointer to any application-specific context
+    // connlost A pointer to an MQTTClient_connectionLost() callback function
+    // msgarrvd A pointer to an MQTTClient_messageArrived() callback function
+    // delivered A pointer to an MQTTClient_deliveryComplete() callback function
     MQTTClient_setCallbacks(client, NULL, connlost, msgarrvd, delivered);
+    //
     if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
     {
         printf("Failed to connect, return code %d\n", rc);
         exit(EXIT_FAILURE);
     }
-    pubmsg.payload = PAYLOAD;
-    pubmsg.payloadlen = strlen(PAYLOAD);
+    char cadena_hola[]=;
+    scanf("%s\n",&cadena_hola);
+    pubmsg.payload = cadena_hola;
+    pubmsg.payloadlen = strlen(cadena_hola);
     pubmsg.qos = QOS;
     pubmsg.retained = 0;
     deliveredtoken = 0;
