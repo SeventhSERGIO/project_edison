@@ -72,8 +72,8 @@ int main(int argc, char* argv[])
     //
     if ((rc = MQTTClient_connect(client, &conn_opts)) != MQTTCLIENT_SUCCESS)
     {
-        printf("Failed to connect, return code %d\n", rc);
-        exit(specified/home/root/paho.mqtt.c/build/output
+      printf("Failed to connect, return code %d\n", rc);
+      exit(EXIT_FAILURE);
     }
     int valor;
     scanf("%d\n",&valor);
