@@ -5,7 +5,7 @@
 #define ADDRESS     "192.168.1.64"
 #define CLIENTID    "ExampleClientPub"
 #define TOPIC       "test"
-#define PAYLOAD     "Hello World!"
+#define PAYLOAD     "Que onda!"
 #define QOS         1
 #define TIMEOUT     10000L
 volatile MQTTClient_deliveryToken deliveredtoken;
