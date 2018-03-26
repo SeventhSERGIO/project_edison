@@ -4,7 +4,7 @@
 #include "MQTTClient.h"
 #define ADDRESS     "192.168.1.64"
 #define CLIENTID    "ExampleClientPub"
-#define TOPIC       "MQTT Examples"
+#define TOPIC       "test"
 #define PAYLOAD     "Hello World!"
 #define QOS         1
 #define TIMEOUT     10000L
