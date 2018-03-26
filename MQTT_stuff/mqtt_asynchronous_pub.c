@@ -75,10 +75,10 @@ int main(int argc, char* argv[])
         printf("Failed to connect, return code %d\n", rc);
         exit(specified/home/root/paho.mqtt.c/build/output
     }
-    char cadena_hola[];
-    scanf("%s\n",&cadena_hola);
-    pubmsg.payload = cadena_hola;
-    pubmsg.payloadlen = strlen(cadena_hola);
+    int valor;
+    scanf("%d\n",&valor);
+    pubmsg.payload = valor;
+    pubmsg.payloadlen = strlen(valor);
     pubmsg.qos = QOS;
     pubmsg.retained = 0;
     deliveredtoken = 0;
