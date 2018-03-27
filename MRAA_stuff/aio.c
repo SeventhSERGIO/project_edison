@@ -31,11 +31,5 @@ int main ()
         //fprintf(stdout, "ADC A0 read float - %.5f\n", float_value);
     }
 
-    /* close AIO */
-    status = mraa_aio_close(aio);
-    if (status != MRAA_SUCCESS) {
-        goto err_exit;
-    }
-
     return EXIT_SUCCESS;
 }
