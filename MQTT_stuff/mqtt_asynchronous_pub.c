@@ -78,18 +78,20 @@ int main(int argc, char* argv[])
       printf("Failed to connect, return code %d\n", rc);
       exit(EXIT_FAILURE);
     }
-    scanf("%d", &valor);
-    sprintf(cadena, "%d", valor);
-    pubmsg.payload = cadena;
-    pubmsg.payloadlen = strlen(cadena);
-    pubmsg.qos = QOS;
-    pubmsg.retained = 0;
-    deliveredtoken = 0;
-    MQTTClient_publishMessage(client, TOPIC, &pubmsg, &token);
-    printf("Waiting for publication of %s\n"
-            "on topic %s for client with ClientID: %s\n",
-            PAYLOAD, TOPIC, CLIENTID);
-    while(deliveredtoken != token);
+    while(1){
+      scanf("%d", &valor);
+      sprintf(cadena, "%d", valor);
+      pubmsg.payload = cadena;
+      pubmsg.payloadlen = strlen(cadena);
+      pubmsg.qos = QOS;
+      pubmsg.retained = 0;
+      deliveredtoken = 0;
+      MQTTClient_publishMessage(client, TOPIC, &pubmsg, &token);
+      printf("Waiting for publication of %s\n"
+              "on topic %s for client with ClientID: %s\n",
+              PAYLOAD, TOPIC, CLIENTID);
+      while(deliveredtoken != token);
+    }
     MQTTClient_disconnect(client, 10000);
     MQTTClient_destroy(&client);
     return rc;
