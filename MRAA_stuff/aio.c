@@ -43,7 +43,7 @@ int main()
         value = mraa_aio_read(aio);
         float_value = mraa_aio_read_float(aio);
         fprintf(stdout, "ADC A0 read %X - %d\n", value, value);
-        fprintf(stdout, "ADC A0 read float - %.5f\n", float_value);
+        //fprintf(stdout, "ADC A0 read float - %.5f\n", float_value);
     }
 
     /* close AIO */
