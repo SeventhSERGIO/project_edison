@@ -1,8 +1,9 @@
 #include "mqtt.h"
+
 volatile MQTTClient_deliveryToken deliveredtoken;
 void delivered(void *context, MQTTClient_deliveryToken dt)
 {
-    printf("Message with token value %d delivery confirmed\n", dt);
+    //printf("Message with token value %d delivery confirmed\n", dt);
     deliveredtoken = dt;
 }
 int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_message *message)
@@ -76,9 +77,6 @@ while (1) {
       pubmsg.retained = 0;
       deliveredtoken = 0;
       MQTTClient_publishMessage(client, TOPIC, &pubmsg, &token);
-      printf("Waiting for publication of %s\n"
-              "on topic %s for client with ClientID: %s\n",
-              PAYLOAD, TOPIC, CLIENTID);
       while(deliveredtoken != token);
 }
     //MQTTClient_disconnect(client, 10000);
