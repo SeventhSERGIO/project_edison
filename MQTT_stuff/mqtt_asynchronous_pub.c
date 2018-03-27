@@ -92,7 +92,7 @@ while (1) {
               PAYLOAD, TOPIC, CLIENTID);
       while(deliveredtoken != token);
 }
-    MQTTClient_disconnect(client, 10000);
-    MQTTClient_destroy(&client);
+    //MQTTClient_disconnect(client, 10000);
+    //MQTTClient_destroy(&client);
     return rc;
 }
