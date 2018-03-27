@@ -7,7 +7,7 @@
 
 /* AIO port */
 #define AIO_PORT 0
-
+/*
 volatile sig_atomic_t flag = 1;
 
 void sig_handler(int signum)
@@ -17,15 +17,15 @@ void sig_handler(int signum)
         flag = 0;
     }
 }
-
-int main()
+*/
+int main ()
 {
     mraa_result_t status = MRAA_SUCCESS;
     mraa_aio_context aio;
     uint16_t value = 0;
-    float float_value = 0.0;
+    //float float_value = 0.0;
 
-    signal(SIGINT, sig_handler);
+    //signal(SIGINT, sig_handler);
 
     /* initialize mraa for the platform (not needed most of the times) */
     mraa_init();
@@ -39,7 +39,7 @@ int main()
         return EXIT_FAILURE;
     }
 
-    while (flag) {
+    while (1) {
         value = mraa_aio_read(aio);
         float_value = mraa_aio_read_float(aio);
         fprintf(stdout, "ADC A0 read %X - %d\n", value, value);
