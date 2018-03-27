@@ -78,7 +78,6 @@ int main(int argc, char* argv[])
       printf("Failed to connect, return code %d\n", rc);
       exit(EXIT_FAILURE);
     }
-    while(1){
       scanf("%d", &valor);
       sprintf(cadena, "%d", valor);
       pubmsg.payload = cadena;
@@ -91,7 +90,7 @@ int main(int argc, char* argv[])
               "on topic %s for client with ClientID: %s\n",
               PAYLOAD, TOPIC, CLIENTID);
       while(deliveredtoken != token);
-    }
+
     MQTTClient_disconnect(client, 10000);
     MQTTClient_destroy(&client);
     return rc;
