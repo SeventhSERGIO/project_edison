@@ -81,7 +81,7 @@ int main(int argc, char* argv[])
     //scanf("%d", &valor);
     //sprintf(cadena, "%d", valor);
     pubmsg.payload = PAYLOAD;//cadena;
-    pubmsg.payloadlen = strlen(valor);
+    pubmsg.payloadlen = strlen(PAYLOAD);
     pubmsg.qos = QOS;
     pubmsg.retained = 0;
     deliveredtoken = 0;
