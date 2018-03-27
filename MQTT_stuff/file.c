@@ -11,7 +11,7 @@
 //  Macros
 #define ADDRESS     "192.168.1.77"
 #define CLIENTID    "ExampleClientPub"
-#define TOPIC       "test"
+#define TOPIC       "test/test_2/test/3"
 #define PAYLOAD     "Que onda!"
 #define QOS         1
 #define TIMEOUT     10000L
