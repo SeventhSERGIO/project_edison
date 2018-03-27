@@ -50,8 +50,8 @@ int main(int argc, char* argv[])
     // The token can then be used to check that the message was successfully delivered to its destination
     MQTTClient_deliveryToken token;
     int rc;
-    //int valor;
-    //char cadena[LEN];
+    int valor;
+    char cadena[LEN];
     // This function creates an MQTT client ready for connection to the specified server and
     // using the specified persistent storage
     // &client A pointer to an MQTTClient handle
@@ -78,10 +78,10 @@ int main(int argc, char* argv[])
       printf("Failed to connect, return code %d\n", rc);
       exit(EXIT_FAILURE);
     }
-    //scanf("%d", &valor);
-    //sprintf(cadena, "%d", valor);
-    pubmsg.payload = PAYLOAD;//cadena;
-    pubmsg.payloadlen = strlen(PAYLOAD);
+    scanf("%d", &valor);
+    sprintf(cadena, "%d", valor);
+    pubmsg.payload = cadena;
+    pubmsg.payloadlen = strlen(cadena);
     pubmsg.qos = QOS;
     pubmsg.retained = 0;
     deliveredtoken = 0;
