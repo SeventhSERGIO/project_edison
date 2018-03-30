@@ -9,9 +9,9 @@
 #define AIO_PORT 0
 #define LEN 20
 //  Macros
-#define ADDRESS     "192.168.1.92"
+#define ADDRESS     "192.168.1.95"
 #define CLIENTID    "ExampleClientPub"
-#define TOPIC       "test"
+#define TOPIC       "inTopic"
 #define PAYLOAD     "Que onda!"
 #define QOS         1
 #define TIMEOUT     10000L
