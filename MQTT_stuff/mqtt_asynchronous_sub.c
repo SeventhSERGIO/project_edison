@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "MQTTClient.h"
-#define ADDRESS     "192.168.1.110"
+#define ADDRESS     "172.20.10.7"
 #define CLIENTID    "edison_6"
 #define TOPIC       "relay_2"
 #define PAYLOAD     "Hello World!"
