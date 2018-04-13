@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "MQTTClient.h"
-#define ADDRESS     "192.168.1."
+#define ADDRESS     "192.168.1.110"
 #define CLIENTID    "edison_6"
-#define TOPIC       "outTopic"
+#define TOPIC       "relay_2"
 #define PAYLOAD     "Hello World!"
 #define QOS         1
 #define TIMEOUT     10000L
