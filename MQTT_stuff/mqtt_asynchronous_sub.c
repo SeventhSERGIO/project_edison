@@ -4,7 +4,7 @@
 #include "MQTTClient.h"
 #define ADDRESS     "172.20.10.7"
 #define CLIENTID    "edison_6"
-#define TOPIC       "relay_2"
+#define TOPIC       "analog_test"
 #define PAYLOAD     "Hello World!"
 #define QOS         1
 #define TIMEOUT     10000L
